@@ -13,7 +13,7 @@ header("Content-Security-Policy: upgrade-insecure-requests");
     <script>
         function triggerPrint(endpoint) {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://192.168.100.82/"+ endpoint, true);
+            xhr.open("GET", "https://192.168.100.82/"+ endpoint, true);
             xhr.send();
             return false; // Prevents the default behavior of the link
         }
@@ -21,7 +21,7 @@ header("Content-Security-Policy: upgrade-insecure-requests");
             event.preventDefault(); // Prevents the default form submission
             var message = document.getElementById("messageInput").value;
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://192.168.100.82/" + urlParam + "?message=" + encodeURIComponent(message), true);
+            xhr.open("GET", "https://192.168.100.82/" + urlParam + "?message=" + encodeURIComponent(message), true);
             xhr.send();
             // Add any further handling logic here
             return false; // Prevents the default behavior of the form
@@ -31,7 +31,7 @@ header("Content-Security-Policy: upgrade-insecure-requests");
             event.preventDefault(); // Prevents the default form submission
             var bin = document.getElementById("binaryInput").value;
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://192.168.100.82/" + urlParam + "?bin=" + encodeURIComponent(bin), true);
+            xhr.open("GET", "https://192.168.100.82/" + urlParam + "?bin=" + encodeURIComponent(bin), true);
             xhr.send();
             // Add any further handling logic here
             return false; // Prevents the default behavior of the form
@@ -44,7 +44,7 @@ header("Content-Security-Policy: upgrade-insecure-requests");
 
         function fetchPotValue() {
             var script = document.createElement('script');
-            script.src = 'http://192.168.100.82/';
+            script.src = 'https://192.168.100.82/';
             document.head.appendChild(script);
         }
 
@@ -58,13 +58,13 @@ header("Content-Security-Policy: upgrade-insecure-requests");
         <div class="row border mt-5 bg-light rounded p-2">
             <h1 class="mt-2">LED Display</h1>
             <div class="col-md-4 p-5">
-                <a href="http://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">Hello World</a>
+                <a href="https://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">Hello World</a>
             </div>
             <div class="col-md-4 p-5">
-                <a href="http://192.168.100.82/count" class="btn btn-success w-100" onclick="return triggerPrint('count')">Count 1-100</a>
+                <a href="https://192.168.100.82/count" class="btn btn-success w-100" onclick="return triggerPrint('count')">Count 1-100</a>
             </div>
             <div class="col-md-4 p-5">
-                <a href="http://192.168.100.82/countDown" class="btn btn-danger w-100" onclick="return triggerPrint('countDown')">Count Down</a>
+                <a href="https://192.168.100.82/countDown" class="btn btn-danger w-100" onclick="return triggerPrint('countDown')">Count Down</a>
             </div>
         </div>
         <div class="row border mt-5 bg-light rounded p-2">
