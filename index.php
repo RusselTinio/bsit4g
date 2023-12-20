@@ -1,4 +1,6 @@
-
+<?php
+header("Content-Security-Policy: upgrade-insecure-requests");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
