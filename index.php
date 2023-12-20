@@ -46,7 +46,7 @@
         <div class="row border mt-5 bg-light rounded p-2">
             <h1 class="mt-2">LED Display</h1>
             <div class="col-md-4 p-5">
-                <a href="http://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">Hello World</a>
+                <a href="http://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">sampo World</a>
             </div>
             <div class="col-md-4 p-5">
                 <a href="http://192.168.100.82/count" class="btn btn-success w-100" onclick="return triggerPrint('count')">Count 1-100</a>
