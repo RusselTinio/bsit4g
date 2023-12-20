@@ -25,6 +25,16 @@
             return false; // Prevents the default behavior of the form
         }
 
+        function sendBinary(urlParam, event) {
+            event.preventDefault(); // Prevents the default form submission
+            var bin = document.getElementById("binaryInput").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.100.82/" + urlParam + "?bin=" + encodeURIComponent(bin), true);
+            xhr.send();
+            // Add any further handling logic here
+            return false; // Prevents the default behavior of the form
+        }
+
         function updatePotValue(value) {
             document.getElementById('potProgressBar').style.width = value + '%';
             document.getElementById('potProgressBar').innerText = value + '%';
@@ -46,7 +56,7 @@
         <div class="row border mt-5 bg-light rounded p-2">
             <h1 class="mt-2">LED Display</h1>
             <div class="col-md-4 p-5">
-                <a href="http://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">sampo World</a>
+                <a href="http://192.168.100.82/hello" class="btn btn-primary w-100" onclick="return triggerPrint('hello')">Hello World</a>
             </div>
             <div class="col-md-4 p-5">
                 <a href="http://192.168.100.82/count" class="btn btn-success w-100" onclick="return triggerPrint('count')">Count 1-100</a>
@@ -57,11 +67,11 @@
         </div>
         <div class="row border mt-5 bg-light rounded p-2">
         <h1>Binary count ing LED Light</h1>
-            <form action="">
+            <form onsubmit="return sendBinary('binary', event)">
                 <div class="input-group">
-                <input type="text" class="form-control" placeholder="1-100" name="binay">
+                <input type="number" class="form-control" placeholder="1-100" id="binaryInput" min="1" max="100">
                 <div class="input-group-btn">
-                    <button class="btn btn-default" type="button" ><i class="fa-solid fa-paper-plane"></i></button>
+                    <button class="btn btn-default" type="submit" ><i class="fa-solid fa-paper-plane"></i></button>
                 </div>
                 </div>
             </form>
